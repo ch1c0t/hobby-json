@@ -4,10 +4,10 @@ module Hobby
   module JSON
     def self.included app
       app.use Rack::ContentType, 'application/json'
-      app.response.extend Write
+      app.response = Response
     end
 
-    module Write
+    class Response < Rack::Response
       def write object
         super object.to_json
       end
