@@ -14,7 +14,7 @@ module Hobby
     end
 
     def json
-      @json ||= JSON.parse request.body.read
+      @json ||= ::JSON.parse request.body.read
     end
   end
 end
