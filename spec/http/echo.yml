@@ -1,0 +1,13 @@
+- get:
+    path: /
+    body:
+      string: string
+      number: 42
+
+  response:
+    status: 200
+    body:
+      string: string
+      number: 42
+    headers.>:
+      Content-Type: application/json

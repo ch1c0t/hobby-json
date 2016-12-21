@@ -1,4 +1,5 @@
 require 'json'
+require 'rack'
 
 module Hobby
   module JSON

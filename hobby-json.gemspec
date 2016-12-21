@@ -4,4 +4,6 @@ Gem::Specification.new do |g|
   g.version = '0.0.2'
   g.summary = 'A way to work with JSON in Hobby without too much verbosity.'
   g.authors = ['Anatoly Chernow']
+
+  g.add_dependency 'rack'
 end
