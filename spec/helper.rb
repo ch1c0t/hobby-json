@@ -6,15 +6,17 @@ require 'puma'
 require_relative 'setup/power_assert'
 require_relative 'setup/mutant'
 
-SOURCE = IO.read 'spec/apps/echo.rb'
-
 module AppRunning
   def self.included group
     group.class_eval do
       before :each do |example|
         @socket = "app.for.#{example}.socket"
         @pid = fork do
-          server = Puma::Server.new eval SOURCE
+          server = Puma::Server.new Class.new {
+            include Hobby::App
+            include Hobby::JSON
+            get { json }
+          }.new
           server.add_unix_listener @socket
           server.run
           sleep
