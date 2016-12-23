@@ -15,7 +15,11 @@ module Hobby
     end
 
     def json
-      @json ||= ::JSON.parse request.body.read
+      @json ||= begin
+                  ::JSON.parse request.body.read
+                rescue
+                  response.status = 400
+                end
     end
   end
 end

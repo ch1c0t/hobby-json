@@ -1,0 +1,6 @@
+- get:
+    path: /
+    body: not very json
+
+  response:
+    status: 400
