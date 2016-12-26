@@ -8,5 +8,4 @@ Hobby::Devtools::RSpec.describe do
       get { json }
     end.new
   end
-  path 'spec/http/*.yml'
 end
