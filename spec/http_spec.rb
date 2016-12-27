@@ -6,6 +6,7 @@ Hobby::Devtools::RSpec.describe do
       include Hobby
       include Hobby::JSON
       get { json }
+      get('/access_key') { json['key'] }
     end.new
   end
 end

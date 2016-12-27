@@ -19,6 +19,7 @@ module Hobby
                   ::JSON.parse request.body.read
                 rescue
                   response.status = 400
+                  throw :halt, response
                 end
     end
   end
