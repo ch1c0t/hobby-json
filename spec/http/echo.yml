@@ -1,11 +1,13 @@
 - get:
     path: /
+    format: json
     body:
       string: string
       number: 42
 
   response:
     status: 200
+    format: json
     body:
       string: string
       number: 42

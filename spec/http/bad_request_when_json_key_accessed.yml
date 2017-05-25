@@ -1,8 +1,7 @@
 - get:
     path: /access_key
-    body: not very json
-
-  format:
+    format: text
+    body: just plain text, not json
 
   response:
     status: 400

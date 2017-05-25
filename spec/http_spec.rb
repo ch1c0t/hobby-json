@@ -9,5 +9,4 @@ Hobby::Devtools::RSpec.describe do
       get('/access_key') { json['key'] }
     end.new
   end
-  format JSON
 end
