@@ -2,5 +2,7 @@
     path: /
     body: not very json
 
+  format:
+
   response:
     status: 400
