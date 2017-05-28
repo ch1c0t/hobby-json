@@ -1,0 +1,30 @@
+== Installation
+
+[source,bash]
+----
+gem install hobby-json
+----
+
+== Introduction
+
+It tries to parse `request.body` as JSON.
+If succeeded, it will store an Ruby object parsed from JSON in `json`.
+If `request.body` happened not to have a valid JSON,
+it will halt the request with https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400[400 status code].
+
+A response will be converted to JSON by calling `#to_json` on the latest action object.
+
+Here is an echo server(it returns the same JSON posted by a request):
+
+[source,ruby]
+----
+require 'hobby'
+require 'hobby-json'
+
+class Echo
+  include Hobby
+  include JSON
+
+  get { json }
+end
+----
