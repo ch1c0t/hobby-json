@@ -28,3 +28,18 @@ class Echo
   get { json }
 end
 ----
+
+== Development
+
+To run the specs:
+
+[source,bash]
+----
+bundle exec rspec
+----
+
+To perform mutation analysis:
+[source,bash]
+----
+bundle exec mutant --use rspec 'Hobby::JSON*'
+----
