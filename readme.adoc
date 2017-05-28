@@ -1,3 +1,8 @@
+= Hobby-JSON
+
+This repository provides a https://github.com/ch1c0t/hobby[Hobby] extension
+for JSON requests and responses.
+
 == Installation
 
 [source,bash]
