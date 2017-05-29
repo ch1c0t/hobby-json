@@ -24,7 +24,7 @@ Here is an echo server(it returns the same JSON posted by a request):
 [source,ruby]
 ----
 require 'hobby'
-require 'hobby-json'
+require 'hobby/json'
 
 class Echo
   include Hobby
