@@ -19,7 +19,7 @@ it will halt the request with https://developer.mozilla.org/en-US/docs/Web/HTTP/
 
 A response will be converted to JSON by calling `.to_json` on the latest action object.
 
-Here is an echo server(it returns the same JSON posted by a request):
+Here is an echo service(it returns the same JSON posted by a request):
 
 [source,ruby]
 ----
@@ -32,6 +32,40 @@ class Echo
 
   post { json }
 end
+----
+
+Another example could be an adding service.
+It expects to get an array of numbers in the `numbers` field, sum them,
+and return the result in the `result` field.
+
+[source,ruby]
+----
+require 'hobby'
+require 'hobby/json'
+
+class Adder
+  include Hobby
+  include JSON
+
+  post do
+    { result: json['numbers'].sum }
+  end
+end
+----
+
+You can put this in `config.ru`:
+
+[source,ruby]
+----
+run Adder.new
+----
+
+and run it with `rackup`. Then, the service can be accessed like so:
+
+[source,bash]
+----
+➜  ~ curl -H "Content-Type: application/json" -X POST -d '{"numbers":[1,2,3]}' http://localhost:9292
+{"result":6}%
 ----
 
 == Development
