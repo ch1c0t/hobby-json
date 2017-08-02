@@ -35,7 +35,7 @@ end
 ----
 
 Another example could be an adding service.
-It expects to get an array of numbers in the `numbers` field, sum them,
+It expects to get an array of numbers in the `numbers` field, after which it does sum them up,
 and return the result in the `result` field.
 
 [source,ruby]
