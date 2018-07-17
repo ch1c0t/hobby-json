@@ -80,5 +80,5 @@ bundle exec rspec
 To perform mutation analysis:
 [source,bash]
 ----
-bundle exec mutant --use rspec 'Hobby::JSON*'
+bundle exec mutant --use rspec 'Hobby::JSON*' --include lib --require hobby/json
 ----
