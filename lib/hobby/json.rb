@@ -16,6 +16,7 @@ module Hobby
 
     def json
       @json ||= begin
+                  fail unless env.fetch('CONTENT_TYPE').start_with? 'application/json'
                   ::JSON.parse request.body.read
                 rescue
                   response.status = 400

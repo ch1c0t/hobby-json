@@ -4,6 +4,8 @@
     body:
       string: string
       number: 42
+    headers:
+      Content-Type: application/json
 
   response:
     status: 200

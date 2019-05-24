@@ -1,0 +1,10 @@
+- get:
+    path: /
+    format: json
+    body:
+      valid: json
+    headers:
+      Content-Type: text/plain
+
+  response:
+    status: 400
