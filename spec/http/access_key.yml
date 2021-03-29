@@ -1,0 +1,14 @@
+- get:
+    path: /access_key
+    format: json
+    body:
+      key: some string
+    headers:
+      Content-Type: application/json
+
+  response:
+    status: 200
+    format: json
+    body: some string
+    headers.>:
+      Content-Type: application/json
